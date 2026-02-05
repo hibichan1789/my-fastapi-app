@@ -1,6 +1,9 @@
 ## python fastAPI練習  
-郵便番号を打つことで住所の取得が可能  
-数字7桁のみ受け付けるようにバリデーションを実装
+郵便番号を打つことで住所の取得 
+数字7桁のみ受け付けるようにバリデーションを実装  
+住所から位置情報の取得  
+位置情報から現在の天気の取得ができる  
+
 ## 外部APIの利用について
 本プロジェクトでは以下の外部APIを利用しています  
 - [zipcode](https://zipcloud.ibsnet.co.jp/)
@@ -8,6 +11,9 @@
 
 - [国土地理院API](https://www.gsi.go.jp/top.html)  
 - [国土地理院API利用規約](https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html)  
+
+- [OpenWeather](https://openweathermap.org/)
+- Weather data is provided by OpenWeather.
 ## 使い方
 # 環境変数の準備
 cp .env.sample .env  
@@ -21,11 +27,15 @@ Dockerfile,docker-compose.yml,.envとかを編集したらbuild
 動作確認用のswaggerを立ち上げるのに苦労した  
 IPv6とIPv4の競合？でlocalhostでできないことを何とかするのに苦労した
 
+## 修正内容 と 実装内容
 # 修正内容
-zipcodeが7桁の数字で不適切な場合のエラーハンドリングの修正  
 
+# 実装内容
+位置情報から現在の天気の取得をできるように実装
 ## 今日学んだこと
 dockerの環境構築名前空間の衝突  
+.envにAPIkeyなどを環境変数に定義すること、ただし.evnファイルは.gitignore,.dockerignoreに必ず記載する  
+外部APIを利用したものをgithubにあげるときは利用規約を読み、正しい出典の明記をする
 ctrl + @, ctrl + 1これ便利すぎる  
 ni ファイル名  
 cp コピー元 コピー先  
