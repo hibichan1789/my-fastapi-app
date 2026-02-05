@@ -4,8 +4,10 @@
 # 外部APIの利用について
 本プロジェクトでは以下の外部APIを利用しています  
 - [zipcode](https://zipcloud.ibsnet.co.jp/)
-- [zipcodeAPI利用規約](https://zipcloud.ibsnet.co.jp/rule/api)
+- [zipcodeAPI利用規約](https://zipcloud.ibsnet.co.jp/rule/api)  
 
+- [国土地理院API](https://www.gsi.go.jp/top.html)  
+- [国土地理院API利用規約](https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html)  
 
 # 環境変数の準備
 cp .env.sample .env  
@@ -25,4 +27,12 @@ ctrl + @, ctrl + 1これ便利すぎる
 ni ファイル名  
 cp コピー元 コピー先  
 .env ファイルの参考として.env.sampleを作成しておく,env.sampleにはAPIキーは直接書かないあくまで例だけ  
-rm 削除したいファイル名
+rm 削除したいファイル名  
+- gitのブランチの切り替え
+git checkout -b feature/ブランチ名 ブランチを作成しながら移動  
+git add .  
+git commit -m "コメント"  
+git checkout main  
+git merge feature/ブランチ名  
+必ずmainブランチにいる状態でマージする  
+git branchで今いるブランチの確認  
