@@ -21,6 +21,9 @@ Dockerfile,docker-compose.yml,.envとかを編集したらbuild
 動作確認用のswaggerを立ち上げるのに苦労した  
 IPv6とIPv4の競合？でlocalhostでできないことを何とかするのに苦労した
 
+# 修正内容
+zipcodeが7桁の数字で不適切な場合のエラーハンドリングの修正  
+
 # 今日学んだこと
 dockerの環境構築名前空間の衝突  
 ctrl + @, ctrl + 1これ便利すぎる  
@@ -36,3 +39,4 @@ git checkout main
 git merge feature/ブランチ名  
 必ずmainブランチにいる状態でマージする  
 git branchで今いるブランチの確認  
+git branch -d feature/ブランチ名 マージ後はブランチを消す  

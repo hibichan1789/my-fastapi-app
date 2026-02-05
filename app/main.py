@@ -21,9 +21,9 @@ async def get_current_weather(zipcode:str=Path(..., pattern=r"^\d{7}$")):
     except httpx.HTTPStatusError as e:
         raise HTTPException(status_code=502, detail=e)
     zipcode_json = zipcode_response.json()
-    address = zipcode_json["results"][0]["address1"] + zipcode_json["results"][0]["address2"]
-    if not address:
+    if not zipcode_json["results"]:
         raise HTTPException(status_code=404, detail=f"address not found")
+    address = zipcode_json["results"][0]["address1"] + zipcode_json["results"][0]["address2"]
     try:
         async with httpx.AsyncClient() as client:
             geo_response = await client.get(geo_url, params={"q":address})
